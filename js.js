@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     event.stopPropagation()
 
     form.classList.add('form-over')
+
+
   }
   const dragLeave = () => {
     form.classList.remove('form-over')
