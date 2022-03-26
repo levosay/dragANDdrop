@@ -47,8 +47,6 @@ body {
   border-radius: 10px;
 }
 
-
-
 .form button {
   position: absolute;
   bottom: 20px;
@@ -93,7 +91,6 @@ body {
   border-radius: 10px;
   overflow: hidden;
 }
-
 
 .preview-img {
   width: 100%;

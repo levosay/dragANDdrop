@@ -4,18 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const preview = document.querySelector('.preview-js')
   let filesArray = []
 
-
   const dragOver = (event) => {
     event.preventDefault()
     event.stopPropagation()
-
     form.classList.add('form-over')
-
-
   }
+
   const dragLeave = () => {
     form.classList.remove('form-over')
   }
+
   const dragDrop = (event) => {
     event.preventDefault()
     event.stopPropagation()
@@ -29,12 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < filesArray.length; i++) {
       if (filesArray[i].images.name === nameImg) {
-
         filesArray.splice(i, 1)
-
       }
     }
-
     event.target.parentElement.remove()
   }
 
@@ -43,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   const createPrevElem = (elem) => {
-    let imgWrapper = document.createElement('div')
-    let img = document.createElement('img')
-    let iconClose = document.createElement('img')
+    const imgWrapper = document.createElement('div')
+    const img = document.createElement('img')
+    const iconClose = document.createElement('img')
 
     iconClose.addEventListener('click', removeElem)
 
@@ -61,7 +56,6 @@ document.addEventListener('DOMContentLoaded', () => {
     preview.append(imgWrapper)
   }
 
-
   const formValidate = (dataTransfer) =>  {
     const maxFileSize = 1000000
 
@@ -74,22 +68,18 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Файл не должен превышать 1мб и быть в формата jpg, png')
       }
     }
-
     return filesArray
   }
 
   const sendForm = (event) => {
+    event.preventDefault()
 
     if (filesArray.length) {
       alert('Отправка')
     } else {
       alert('Добавьте файлы')
     }
-
-    event.preventDefault()
-
   }
-
 
   form.addEventListener('dragover', dragOver)
   form.addEventListener('dragleave', dragLeave)
