@@ -58,9 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const formValidate = (dataTransfer) =>  {
     const maxFileSize = 1000000
+    const fileType = ['image/png', 'image/jpeg']
 
     for (let i = 0; i < dataTransfer.length; i++) {
-      if ((dataTransfer[i].size <= maxFileSize) && ((dataTransfer[i].type === 'image/png') || (dataTransfer[i].type === 'image/jpeg'))) {
+      if (dataTransfer[i].size <= maxFileSize && fileType.includes(dataTransfer[i].type)) {
         filesArray.push({'images': dataTransfer[i]})
 
         createPrevElem(dataTransfer[i])
